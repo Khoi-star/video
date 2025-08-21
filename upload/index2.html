@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Video Wallpaper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+    }
+    #exit {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 0;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay loop muted playsinline webkit-playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Trình duyệt không hỗ trợ video.
+  </video>
+
+  <button id="exit" onclick="tryClose()">✕</button>
+
+  <script>
+    function tryClose() {
+      try { window.close(); } catch(e) {}
+      setTimeout(() => { window.location.href = 'about:blank'; }, 150);
+    }
+  </script>
+</body>
+</html>
